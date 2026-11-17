@@ -1,0 +1,10 @@
+ImGui::Text("Target Bone:");
+ImGui::RadioButton("Head", &selectedBone, 0); ImGui::SameLine();
+ImGui::RadioButton("Neck", &selectedBone, 1); ImGui::SameLine();
+ImGui::RadioButton("Body", &selectedBone, 2); ImGui::SameLine();
+ImGui::RadioButton("Legs", &selectedBone, 3);// Псевдо-C++ для ImGui: только выпадающий список, без функций чита
+static int selectedBone = 0; // 0 = Head
+const char* bones[] = { "Head", "Neck", "Body", "Legs" };
+
+ImGui::Text("Target Bone:");
+ImGui::Combo("##bone", &selectedBone, bones, IM_ARRAYSIZE(bones));
